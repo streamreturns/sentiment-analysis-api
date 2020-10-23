@@ -17,28 +17,28 @@ api_port = '1128'
 - **Request**
 ```
 text = '봄날에 입고가기 좋아요'
-r = requests.post('http://{api_host}:{api_port}/sentiment_analysis'.format(api_host=api_host, s2a_port=int(api_port)), data={'text': text})
+r = requests.post('http://{api_host}:{api_port}/sentiment_analysis'.format(api_host=api_host, api_port=int(api_port)), data={'text': text})
 ```
 
 - **Response**
 ```
-{'raw': [-3.826526641845703, 3.8188369274139404],
+{'raw': [-2.321743965148926, 2.9482204914093018],
  'sentiment': 'positive',
- 'softmax': [0.00047802767949178815, 0.9995219707489014]}
+ 'softmax': [0.005117471795529127, 0.9948825836181641]}
 ```
 
 ### [Example] Negative Sentiment
 - **Request**
 ```
 text = '재질이 거칠어요'
-r = requests.post('http://{api_ip}:{s2a_port}/sentiment_analysis'.format(api_ip=api_ip, s2a_port=int(s2a_port)), data={'text': text})
+r = requests.post('http://{api_host}:{api_port}/sentiment_analysis'.format(api_host=api_host, api_port=int(api_port)), data={'text': text})
 ```
 
 - **Response**
 ```
-{'raw': [2.857180118560791, -2.8349578380584717],
+{'raw': [3.3003969192504883, -3.5723228454589844],
  'sentiment': 'negative',
- 'softmax': [0.9966388940811157, 0.0033610411919653416]}
+ 'softmax': [0.9989653825759888, 0.0010345850605517626]}
 ```
 
 ### [Example] Bulk Inference
@@ -49,7 +49,7 @@ This example analyzes `text` column in the `target_df`.
 def analyze_sentiment(row):
     text = prettify_string(row['text'])
     
-    r = requests.post('http://{api_ip}:{s2a_port}/sentiment_analysis'.format(api_ip=api_ip, s2a_port=int(s2a_port)),
+    r = requests.post('http://{api_host}:{api_port}/sentiment_analysis'.format(api_host=api_host, api_port=int(api_port)),
                       data={
                           'text': text
                       })
