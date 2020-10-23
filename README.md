@@ -1,5 +1,5 @@
 # Sentiment Analysis API
-Deep Learning based Sentiment Analysis from Surprise to Anger (S2A)
+Deep Learning based Sentiment Analysis
 
 ## Usage (Python 3)
 ### Import Library
