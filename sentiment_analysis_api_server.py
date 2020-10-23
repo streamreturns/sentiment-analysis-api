@@ -93,4 +93,4 @@ def sentiment():
 
 
 if __name__ == '__main__':
-    sentiment_analysis_api.run(host='0.0.0.0', port=1129, debug=False)
+    sentiment_analysis_api.run(host='0.0.0.0', port=1128, debug=False)
