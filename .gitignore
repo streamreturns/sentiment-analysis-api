@@ -1,2 +1,4 @@
 .idea
+__pycache__
+config/stage_identifier
 koelectra-base-v3-sentiment-model

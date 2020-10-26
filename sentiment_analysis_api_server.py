@@ -1,5 +1,5 @@
-import torch, os
-from flask import Flask, json, request, redirect
+import torch, os, libfastapi
+from flask import Flask, json, request
 from flask_cors import CORS
 from transformers import ElectraConfig, ElectraTokenizer, ElectraForSequenceClassification
 
@@ -68,7 +68,7 @@ def infer(text):
 
 
 @sentiment_analysis_api.route('/sentiment_analysis', methods=['POST'])
-def sentiment():
+def sentiment_analysis():
     print('POST `sentiment()`')
     if request.method == 'POST':
         # print('[POST]', request.values)
@@ -93,4 +93,5 @@ def sentiment():
 
 
 if __name__ == '__main__':
-    sentiment_analysis_api.run(host='0.0.0.0', port=1128, debug=False)
+    sentiment_analysis_api_port = libfastapi.get_stage_values('api')['port']
+    sentiment_analysis_api.run(host='0.0.0.0', port=int(sentiment_analysis_api_port), debug=False)
