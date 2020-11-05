@@ -9,7 +9,7 @@ max_length = 256
 labels = ['0', '1']
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-device = 'cpu'
+# device = 'cpu'
 print('use Torch Device `{}`'.format(device))
 
 config = ElectraConfig.from_pretrained(

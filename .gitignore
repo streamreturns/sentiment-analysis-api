@@ -2,3 +2,4 @@
 __pycache__
 config/stage_identifier
 koelectra-base-v3-sentiment-model
+docker
