@@ -2,6 +2,12 @@
 Deep Learning based Sentiment Analysis
 
 ## Usage (Python 3)
+
+### Launch Docker Image
+```
+docker run --rm -p 65281:65281 sentiment-analysis-api python sentiment_analysis_api_server.py
+```
+
 ### Import Library
 ```
 import requests
